@@ -1,0 +1,32 @@
+/*default styling for all paragraphs*/
+p {
+    color : coral;
+    font-size: 1em;
+}
+/*styling for paragraph with id=special*/
+p#special{
+    color: plum;
+    font-size:1.2em;
+}
+/*default styling for header2*/
+h2{
+    color: blueviolet;
+    font-size: 1.4em;
+}
+/*default styling for table,td and th*/
+table, td, th {
+    border-style: double;
+    border-width: thick;
+    border-color: darkred;
+}
+/*styling for html attribute that utilizes the emphasis class*/
+.emphasis{
+    font-size: 1.5em;
+    color:cornflowerblue;
+    font-style: italic;
+}
+/*styling for img attribute in html with class = logo*/
+img.logo{
+    height: 90px;
+    width: 300px;
+}
