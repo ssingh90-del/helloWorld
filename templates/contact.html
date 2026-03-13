@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block page_title %}Contact{% endblock %}
+
+{% block page_head %}Contact Form{% endblock %}
+
+{% block page_content %}
+    {% if form_submitted %}
+    <div class="col-12">
+        <h2>Thank you for Completing the Form!</h2>
+    </div>
+    <div class = "col-md-6">
+        <p>First Name: </p>
+    </div>
+    <div class = "col-md-6">
+        <p>{{ request.form.get('first_name')}}</p>
+    </div>
+    <div class = "col-md-6">
+        <p>Last Name: </p>
+    </div>
+    <div class = "col-md-6">
+        <p>{{ request.form.get('last_name')}}</p>
+    </div>
+    <div class = "col-md-6">
+        <p>Email: </p>
+    </div>
+    <div class = "col-md-6">
+        <p>{{ request.form.get('email')}}</p>
+    </div>
+    <div class = "col-md-6">
+        <p>Comment: </p>
+    </div>
+    <div class = "col-md-6">
+        <p>{{ request.form.get('comment')}}</p>
+    </div>
+    <p> <a href="{{ url_for('contact') }}">Complete Form Again</a></p>
+{% else %}
+    <form class="row g-4" method="post">
+      <div class="col-md-3">
+        <input type="text" class="form-control" id="first_name" placeholder="First name" name="first_name">
+      </div>
+      <div class="col-md-3">
+        <input type="text" class="form-control" id="last_name" placeholder="Last name" name="last_name">
+      </div>
+      <div class="col-md-6">
+        <input type="email" class="form-control" id="email" placeholder="Email" name="email">
+      </div>
+      <div class="col-md-12">
+        <input type="text" class="form-control" id="comment" placeholder="Write a Comment!" name="comment">
+      </div>
+      <div class="col-6">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+{% endif %}
+{% endblock %}
